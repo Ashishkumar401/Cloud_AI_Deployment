@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><title>Upload Dataset</title></head>
+<head>
+  <title>Upload Dataset - Cloud AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
 <body>
-  <h2>Upload Your Dataset (CSV)</h2>
-  <form action="/upload" method="post" enctype="multipart/form-data">
+  <div class="container">
+    <h1>☁️ Cloud-Based AI Model Deployment</h1>
+    <h3>Upload Your Dataset (CSV)</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
       <input type="file" name="file" accept=".csv" required>
-      <button type="submit">Upload & Train</button>
-  </form>
+      <button type="submit">📤 Upload & Train Model</button>
+    </form>
+    <p class="footer">Developed by Ashish Kumar | VIT Pune</p>
+  </div>
 </body>
 </html>

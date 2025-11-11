@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><title>Predict</title></head>
+<head>
+  <title>Model Prediction - Cloud AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
 <body>
-  <h2>Enter values to Predict</h2>
-  <form method="post">
-    <input type="text" name="f1" placeholder="Feature 1"><br>
-    <input type="text" name="f2" placeholder="Feature 2"><br>
-    <input type="text" name="f3" placeholder="Feature 3"><br>
-    <input type="text" name="f4" placeholder="Feature 4"><br>
-    <button type="submit">Predict</button>
-  </form>
-  <h3>{{ result }}</h3>
+  <div class="container">
+    <h2>🔍 Predict Using Trained Model</h2>
+    <p>Enter the required feature values below:</p>
+
+    <form method="post">
+      <input type="text" name="f1" placeholder="Sepal Length (cm)" required>
+      <input type="text" name="f2" placeholder="Sepal Width (cm)" required>
+      <input type="text" name="f3" placeholder="Petal Length (cm)" required>
+      <input type="text" name="f4" placeholder="Petal Width (cm)" required>
+      <button type="submit">Predict 🌿</button>
+    </form>
+
+    {% if result %}
+      <div class="result">{{ result }}</div>
+    {% endif %}
+
+    <a href="/">⬅️ Back to Home</a>
+  </div>
 </body>
 </html>
