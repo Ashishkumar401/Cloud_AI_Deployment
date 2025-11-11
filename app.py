@@ -21,7 +21,7 @@ def upload_dataset():
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
         file.save(file_path)
         acc = auto_train(file_path)
-        return render_template('train.html', accuracy=round(acc*100, 2))
+        return render_template('train.html', accuracy=round(acc * 100, 2))
     else:
         return "Please upload a valid CSV file!"
 
@@ -34,5 +34,8 @@ def predict():
         return render_template('predict.html', result=str(prediction))
     return render_template('predict.html')
 
+
+# ✅ IMPORTANT FIX for Render deployment
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
